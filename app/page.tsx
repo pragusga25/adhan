@@ -3,7 +3,15 @@
 import { useEffect, useState } from 'react';
 import dynamic from 'next/dynamic';
 import { Card } from '@/components/ui/card';
-import { MoonIcon, SunIcon, SearchIcon, Clock, Text } from 'lucide-react';
+import {
+  MoonIcon,
+  SunIcon,
+  SearchIcon,
+  Clock,
+  Text,
+  Github,
+  Heart,
+} from 'lucide-react';
 import { useTheme } from 'next-themes';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -11,6 +19,7 @@ import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
 import { cities } from '@/lib/cities';
 import { calculatePrayerTimes } from '@/lib/prayer-times';
 import { City } from '@/components/globe-visualization';
+import Link from 'next/link';
 
 const GlobeVisualization = dynamic(
   () => import('@/components/globe-visualization'),
@@ -119,7 +128,15 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-background">
-      <div className="absolute right-4 top-4 z-10">
+      <div className="absolute right-4 top-4 z-10 flex items-center gap-2">
+        <Link
+          href="https://github.com/pragusga25/adhan"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/80 h-9 w-9"
+        >
+          <Github className="h-5 w-5" />
+        </Link>
         <Button
           variant="outline"
           size="icon"
@@ -234,6 +251,34 @@ export default function Home() {
           </Card>
         </div>
       </div>
+
+      <footer className="w-full py-6 px-4 border-t border-border mt-8">
+        <div className="container mx-auto flex flex-col items-center justify-center gap-2 text-center text-sm text-muted-foreground">
+          <p className="flex items-center gap-1">
+            Made with <Heart className="w-4 h-4 text-red-500 fill-red-500" /> by{' '}
+            <Link
+              href="https://pragusga.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-medium underline underline-offset-4 hover:text-primary"
+            >
+              Taufik
+            </Link>
+          </p>
+          <p>
+            View the{' '}
+            <Link
+              href="https://github.com/pragusga25/adhan"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-medium underline underline-offset-4 hover:text-primary"
+            >
+              source code
+            </Link>{' '}
+            on GitHub
+          </p>
+        </div>
+      </footer>
     </main>
   );
 }
