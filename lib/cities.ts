@@ -1,4 +1,283 @@
 export const cities = [
+  // Indonesia - Sumatra
+  { name: 'Medan', country: 'Indonesia (WIB)', coordinates: [3.5952, 98.6722] },
+  {
+    name: 'Palembang',
+    country: 'Indonesia (WIB)',
+    coordinates: [-2.9761, 104.7754],
+  },
+  {
+    name: 'Padang',
+    country: 'Indonesia (WIB)',
+    coordinates: [-0.9471, 100.4172],
+  },
+  {
+    name: 'Pekanbaru',
+    country: 'Indonesia (WIB)',
+    coordinates: [0.507, 101.4478],
+  },
+  {
+    name: 'Banda Aceh',
+    country: 'Indonesia (WIB)',
+    coordinates: [5.5483, 95.3238],
+  },
+  {
+    name: 'Bengkulu',
+    country: 'Indonesia (WIB)',
+    coordinates: [-3.7928, 102.2608],
+  },
+  {
+    name: 'Jambi',
+    country: 'Indonesia (WIB)',
+    coordinates: [-1.6101, 103.6131],
+  },
+  {
+    name: 'Bandar Lampung',
+    country: 'Indonesia (WIB)',
+    coordinates: [-5.3971, 105.2668],
+  },
+  {
+    name: 'Pangkal Pinang',
+    country: 'Indonesia (WIB)',
+    coordinates: [-2.1316, 106.1169],
+  },
+  {
+    name: 'Tanjung Pinang',
+    country: 'Indonesia (WIB)',
+    coordinates: [0.9186, 104.4665],
+  },
+
+  // Indonesia - Java
+  {
+    name: 'Jakarta',
+    country: 'Indonesia (WIB)',
+    coordinates: [-6.2088, 106.8456],
+  },
+  {
+    name: 'Surabaya',
+    country: 'Indonesia (WIB)',
+    coordinates: [-7.2575, 112.7521],
+  },
+  {
+    name: 'Bandung',
+    country: 'Indonesia (WIB)',
+    coordinates: [-6.9175, 107.6191],
+  },
+  {
+    name: 'Semarang',
+    country: 'Indonesia (WIB)',
+    coordinates: [-6.9932, 110.4203],
+  },
+  {
+    name: 'Yogyakarta',
+    country: 'Indonesia (WIB)',
+    coordinates: [-7.7971, 110.3688],
+  },
+  {
+    name: 'Malang',
+    country: 'Indonesia (WIB)',
+    coordinates: [-7.9797, 112.6304],
+  },
+  {
+    name: 'Bogor',
+    country: 'Indonesia (WIB)',
+    coordinates: [-6.5971, 106.806],
+  },
+  {
+    name: 'Surakarta',
+    country: 'Indonesia (WIB)',
+    coordinates: [-7.5755, 110.8243],
+  },
+
+  // Indonesia - Kalimantan
+  {
+    name: 'Banjarmasin',
+    country: 'Indonesia (WITA)',
+    coordinates: [-3.3186, 114.5944],
+  },
+  {
+    name: 'Pontianak',
+    country: 'Indonesia (WIB)',
+    coordinates: [-0.0263, 109.3425],
+  },
+  {
+    name: 'Palangkaraya',
+    country: 'Indonesia (WIB)',
+    coordinates: [-2.2161, 113.9134],
+  },
+  {
+    name: 'Samarinda',
+    country: 'Indonesia (WITA)',
+    coordinates: [-0.5022, 117.1536],
+  },
+  {
+    name: 'Balikpapan',
+    country: 'Indonesia (WITA)',
+    coordinates: [-1.2379, 116.8529],
+  },
+  {
+    name: 'Tarakan',
+    country: 'Indonesia (WITA)',
+    coordinates: [3.3273, 117.5785],
+  },
+  {
+    name: 'Bontang',
+    country: 'Indonesia (WITA)',
+    coordinates: [0.1374, 117.4784],
+  },
+  {
+    name: 'Singkawang',
+    country: 'Indonesia (WIB)',
+    coordinates: [0.906, 108.9872],
+  },
+  {
+    name: 'Tanjung Selor',
+    country: 'Indonesia (WITA)',
+    coordinates: [2.8374, 117.3657],
+  },
+
+  // Indonesia - Sulawesi
+  {
+    name: 'Makassar',
+    country: 'Indonesia (WITA)',
+    coordinates: [-5.1477, 119.4327],
+  },
+  {
+    name: 'Manado',
+    country: 'Indonesia (WITA)',
+    coordinates: [1.4748, 124.8421],
+  },
+  {
+    name: 'Palu',
+    country: 'Indonesia (WITA)',
+    coordinates: [-0.9003, 119.8779],
+  },
+  {
+    name: 'Gorontalo',
+    country: 'Indonesia (WITA)',
+    coordinates: [0.5375, 123.0568],
+  },
+  {
+    name: 'Kendari',
+    country: 'Indonesia (WITA)',
+    coordinates: [-3.9985, 122.5127],
+  },
+  {
+    name: 'Mamuju',
+    country: 'Indonesia (WITA)',
+    coordinates: [-2.6681, 118.8621],
+  },
+  {
+    name: 'Luwuk',
+    country: 'Indonesia (WITA)',
+    coordinates: [-0.939, 122.7895],
+  },
+  {
+    name: 'Bitung',
+    country: 'Indonesia (WITA)',
+    coordinates: [1.4404, 125.1217],
+  },
+  {
+    name: 'Pare-Pare',
+    country: 'Indonesia (WITA)',
+    coordinates: [-4.0135, 119.6244],
+  },
+
+  // Indonesia - Nusa Tenggara
+  {
+    name: 'Denpasar',
+    country: 'Indonesia (WITA)',
+    coordinates: [-8.65, 115.2167],
+  },
+  {
+    name: 'Mataram',
+    country: 'Indonesia (WITA)',
+    coordinates: [-8.5833, 116.1167],
+  },
+  {
+    name: 'Kupang',
+    country: 'Indonesia (WITA)',
+    coordinates: [-10.1772, 123.607],
+  },
+  {
+    name: 'Singaraja',
+    country: 'Indonesia (WITA)',
+    coordinates: [-8.112, 115.0892],
+  },
+  {
+    name: 'Bima',
+    country: 'Indonesia (WITA)',
+    coordinates: [-8.4646, 118.7447],
+  },
+  {
+    name: 'Maumere',
+    country: 'Indonesia (WITA)',
+    coordinates: [-8.6185, 122.2147],
+  },
+  {
+    name: 'Labuan Bajo',
+    country: 'Indonesia (WITA)',
+    coordinates: [-8.4964, 119.8877],
+  },
+  {
+    name: 'Ende',
+    country: 'Indonesia (WITA)',
+    coordinates: [-8.8432, 121.6623],
+  },
+  {
+    name: 'Waingapu',
+    country: 'Indonesia (WITA)',
+    coordinates: [-9.6582, 120.2668],
+  },
+
+  // Indonesia - Maluku & Papua
+  {
+    name: 'Jayapura',
+    country: 'Indonesia (WIT)',
+    coordinates: [-2.5333, 140.7167],
+  },
+  { name: 'Ambon', country: 'Indonesia (WIT)', coordinates: [-3.7, 128.1667] },
+  {
+    name: 'Sorong',
+    country: 'Indonesia (WIT)',
+    coordinates: [-0.8767, 131.2458],
+  },
+  {
+    name: 'Ternate',
+    country: 'Indonesia (WIT)',
+    coordinates: [0.7957, 127.3697],
+  },
+  {
+    name: 'Manokwari',
+    country: 'Indonesia (WIT)',
+    coordinates: [-0.8615, 134.062],
+  },
+  {
+    name: 'Merauke',
+    country: 'Indonesia (WIT)',
+    coordinates: [-8.4961, 140.3961],
+  },
+  {
+    name: 'Timika',
+    country: 'Indonesia (WIT)',
+    coordinates: [-4.5469, 136.8867],
+  },
+  {
+    name: 'Tual',
+    country: 'Indonesia (WIT)',
+    coordinates: [-5.6267, 132.7519],
+  },
+  {
+    name: 'Nabire',
+    country: 'Indonesia (WIT)',
+    coordinates: [-3.364, 135.4955],
+  },
+  {
+    name: 'Biak',
+    country: 'Indonesia (WIT)',
+    coordinates: [-1.1831, 136.0477],
+  },
+
   // Middle East & North Africa (Additional cities)
   { name: 'Mecca', country: 'Saudi Arabia', coordinates: [21.4225, 39.8262] },
   { name: 'Medina', country: 'Saudi Arabia', coordinates: [24.5247, 39.5692] },
@@ -122,16 +401,48 @@ export const cities = [
   { name: 'Multan', country: 'Pakistan', coordinates: [30.1575, 71.5249] },
   { name: 'Peshawar', country: 'Pakistan', coordinates: [34.0151, 71.5249] },
   { name: 'Quetta', country: 'Pakistan', coordinates: [30.1798, 66.975] },
-  { name: 'Mumbai', country: 'India', coordinates: [19.076, 72.8777] },
+
+  // North India
   { name: 'Delhi', country: 'India', coordinates: [28.6139, 77.209] },
-  { name: 'Kolkata', country: 'India', coordinates: [22.5726, 88.3639] },
-  { name: 'Chennai', country: 'India', coordinates: [13.0827, 80.2707] },
-  { name: 'Bangalore', country: 'India', coordinates: [12.9716, 77.5946] },
-  { name: 'Hyderabad', country: 'India', coordinates: [17.385, 78.4867] },
+  { name: 'Lucknow', country: 'India', coordinates: [26.8467, 80.9462] },
+  { name: 'Kanpur', country: 'India', coordinates: [26.4499, 80.3319] },
+  { name: 'Jaipur', country: 'India', coordinates: [26.9124, 75.7873] },
+  { name: 'Chandigarh', country: 'India', coordinates: [30.7333, 76.7794] },
+  { name: 'Amritsar', country: 'India', coordinates: [31.634, 74.8723] },
+  { name: 'Varanasi', country: 'India', coordinates: [25.3176, 82.9739] },
+
+  // West India
+  { name: 'Mumbai', country: 'India', coordinates: [19.076, 72.8777] },
   { name: 'Ahmedabad', country: 'India', coordinates: [23.0225, 72.5714] },
   { name: 'Pune', country: 'India', coordinates: [18.5204, 73.8567] },
   { name: 'Surat', country: 'India', coordinates: [21.1702, 72.8311] },
-  { name: 'Lucknow', country: 'India', coordinates: [26.8467, 80.9462] },
+  { name: 'Indore', country: 'India', coordinates: [22.7196, 75.8577] },
+
+  // South India
+  { name: 'Bangalore', country: 'India', coordinates: [12.9716, 77.5946] },
+  { name: 'Chennai', country: 'India', coordinates: [13.0827, 80.2707] },
+  { name: 'Hyderabad', country: 'India', coordinates: [17.385, 78.4867] },
+  { name: 'Kochi', country: 'India', coordinates: [9.9312, 76.2673] },
+  {
+    name: 'Thiruvananthapuram',
+    country: 'India',
+    coordinates: [8.5241, 76.9366],
+  },
+  { name: 'Coimbatore', country: 'India', coordinates: [11.0168, 76.9558] },
+  { name: 'Mysore', country: 'India', coordinates: [12.2958, 76.6394] },
+
+  // East India
+  { name: 'Kolkata', country: 'India', coordinates: [22.5726, 88.3639] },
+  { name: 'Patna', country: 'India', coordinates: [25.5941, 85.1376] },
+  { name: 'Bhubaneswar', country: 'India', coordinates: [20.2961, 85.8245] },
+  { name: 'Guwahati', country: 'India', coordinates: [26.1445, 91.7362] },
+  { name: 'Ranchi', country: 'India', coordinates: [23.3441, 85.3096] },
+
+  // Central India
+  { name: 'Nagpur', country: 'India', coordinates: [21.1458, 79.0882] },
+  { name: 'Bhopal', country: 'India', coordinates: [23.2599, 77.4126] },
+  { name: 'Raipur', country: 'India', coordinates: [21.2514, 81.6296] },
+
   { name: 'Dhaka', country: 'Bangladesh', coordinates: [23.8103, 90.4125] },
   {
     name: 'Chittagong',
@@ -144,151 +455,6 @@ export const cities = [
   { name: 'Kandy', country: 'Sri Lanka', coordinates: [7.2906, 80.6337] },
   { name: 'Male', country: 'Maldives', coordinates: [4.1755, 73.5093] },
   { name: 'Kathmandu', country: 'Nepal', coordinates: [27.7172, 85.324] },
-  {
-    name: 'Jakarta',
-    country: 'Indonesia (WIB)',
-    coordinates: [-6.2088, 106.8456],
-  },
-  {
-    name: 'Surabaya',
-    country: 'Indonesia (WIB)',
-    coordinates: [-7.2575, 112.7521],
-  },
-  {
-    name: 'Bandung',
-    country: 'Indonesia (WIB)',
-    coordinates: [-6.9175, 107.6191],
-  },
-  { name: 'Medan', country: 'Indonesia (WIB)', coordinates: [3.5952, 98.6722] },
-  {
-    name: 'Semarang',
-    country: 'Indonesia (WIB)',
-    coordinates: [-6.9932, 110.4203],
-  },
-  {
-    name: 'Palembang',
-    country: 'Indonesia (WIB)',
-    coordinates: [-2.9761, 104.7754],
-  },
-  {
-    name: 'Tangerang',
-    country: 'Indonesia (WIB)',
-    coordinates: [-6.1783, 106.6319],
-  },
-  {
-    name: 'Depok',
-    country: 'Indonesia (WIB)',
-    coordinates: [-6.4025, 106.7942],
-  },
-  {
-    name: 'Bekasi',
-    country: 'Indonesia (WIB)',
-    coordinates: [-6.2349, 106.9896],
-  },
-  {
-    name: 'Malang',
-    country: 'Indonesia (WIB)',
-    coordinates: [-7.9797, 112.6304],
-  },
-  {
-    name: 'Padang',
-    country: 'Indonesia (WIB)',
-    coordinates: [-0.9471, 100.4172],
-  },
-  {
-    name: 'Pekanbaru',
-    country: 'Indonesia (WIB)',
-    coordinates: [0.5103, 101.4478],
-  },
-  {
-    name: 'Bandar Lampung',
-    country: 'Indonesia (WIB)',
-    coordinates: [-5.3971, 105.2668],
-  },
-  {
-    name: 'Yogyakarta',
-    country: 'Indonesia (WIB)',
-    coordinates: [-7.7971, 110.3688],
-  },
-
-  // Central Indonesia (WITA)
-  {
-    name: 'Makassar',
-    country: 'Indonesia (WITA)',
-    coordinates: [-5.1477, 119.4327],
-  },
-  {
-    name: 'Denpasar',
-    country: 'Indonesia (WITA)',
-    coordinates: [-8.65, 115.2167],
-  },
-  {
-    name: 'Balikpapan',
-    country: 'Indonesia (WITA)',
-    coordinates: [-1.2379, 116.8529],
-  },
-  {
-    name: 'Banjarmasin',
-    country: 'Indonesia (WITA)',
-    coordinates: [-3.3186, 114.5944],
-  },
-  {
-    name: 'Pontianak',
-    country: 'Indonesia (WITA)',
-    coordinates: [-0.0263, 109.3425],
-  },
-  {
-    name: 'Mataram',
-    country: 'Indonesia (WITA)',
-    coordinates: [-8.5833, 116.1167],
-  },
-  {
-    name: 'Manado',
-    country: 'Indonesia (WITA)',
-    coordinates: [1.4748, 124.8421],
-  },
-  {
-    name: 'Palu',
-    country: 'Indonesia (WITA)',
-    coordinates: [-0.8917, 119.8707],
-  },
-  {
-    name: 'Kupang',
-    country: 'Indonesia (WITA)',
-    coordinates: [-10.1772, 123.607],
-  },
-
-  // Eastern Indonesia (WIT)
-  {
-    name: 'Ambon',
-    country: 'Indonesia (WIT)',
-    coordinates: [-3.6954, 128.1814],
-  },
-  {
-    name: 'Jayapura',
-    country: 'Indonesia (WIT)',
-    coordinates: [-2.5916, 140.669],
-  },
-  {
-    name: 'Sorong',
-    country: 'Indonesia (WIT)',
-    coordinates: [-0.8761, 131.2558],
-  },
-  {
-    name: 'Ternate',
-    country: 'Indonesia (WIT)',
-    coordinates: [0.7957, 127.3697],
-  },
-  {
-    name: 'Merauke',
-    country: 'Indonesia (WIT)',
-    coordinates: [-8.4961, 140.4145],
-  },
-  {
-    name: 'Timika',
-    country: 'Indonesia (WIT)',
-    coordinates: [-4.5469, 136.8867],
-  },
 
   // Thailand (Extended)
   { name: 'Bangkok', country: 'Thailand', coordinates: [13.7563, 100.5018] },
@@ -353,9 +519,17 @@ export const cities = [
   },
 
   // Central Asia (Expanded)
+  // Uzbekistan
   { name: 'Tashkent', country: 'Uzbekistan', coordinates: [41.2995, 69.2401] },
   { name: 'Samarkand', country: 'Uzbekistan', coordinates: [39.627, 66.975] },
   { name: 'Bukhara', country: 'Uzbekistan', coordinates: [39.768, 64.421] },
+  { name: 'Namangan', country: 'Uzbekistan', coordinates: [41.0011, 71.6673] },
+  { name: 'Andijan', country: 'Uzbekistan', coordinates: [40.7821, 72.3442] },
+  { name: 'Nukus', country: 'Uzbekistan', coordinates: [42.4671, 59.611] },
+  { name: 'Fergana', country: 'Uzbekistan', coordinates: [40.3842, 71.787] },
+  { name: 'Karshi', country: 'Uzbekistan', coordinates: [38.8622, 65.7911] },
+  { name: 'Urgench', country: 'Uzbekistan', coordinates: [41.5506, 60.6314] },
+
   { name: 'Almaty', country: 'Kazakhstan', coordinates: [43.222, 76.8512] },
   {
     name: 'Nur-Sultan',
@@ -367,12 +541,39 @@ export const cities = [
   { name: 'Osh', country: 'Kyrgyzstan', coordinates: [40.514, 72.8161] },
   { name: 'Dushanbe', country: 'Tajikistan', coordinates: [38.5598, 68.787] },
   { name: 'Khujand', country: 'Tajikistan', coordinates: [40.2835, 69.6198] },
+
+  // Turkmenistan
   {
     name: 'Ashgabat',
     country: 'Turkmenistan',
     coordinates: [37.9601, 58.3261],
   },
+  {
+    name: 'Türkmenabat',
+    country: 'Turkmenistan',
+    coordinates: [39.0733, 63.5785],
+  },
+  {
+    name: 'Dashoguz',
+    country: 'Turkmenistan',
+    coordinates: [41.8363, 59.9666],
+  },
   { name: 'Mary', country: 'Turkmenistan', coordinates: [37.5944, 61.8303] },
+  {
+    name: 'Balkanabat',
+    country: 'Turkmenistan',
+    coordinates: [39.5107, 54.3671],
+  },
+  {
+    name: 'Türkmenbaşy',
+    country: 'Turkmenistan',
+    coordinates: [40.0222, 52.9528],
+  },
+  {
+    name: 'Bayramaly',
+    country: 'Turkmenistan',
+    coordinates: [37.6185, 62.1671],
+  },
 
   // East Asia (Expanded)
   { name: 'Beijing', country: 'China', coordinates: [39.9042, 116.4074] },
