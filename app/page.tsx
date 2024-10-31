@@ -39,7 +39,7 @@ export default function Home() {
   useEffect(() => {
     setMounted(true);
     updateActiveCities();
-    const interval = setInterval(updateActiveCities, 30000); // Update every 30 seconds
+    const interval = setInterval(updateActiveCities, 1000 * 60 * 1); // Update every 1 minute
     return () => clearInterval(interval);
   }, []);
 
@@ -52,8 +52,8 @@ export default function Home() {
 
       prayerTimes.some((prayer) => {
         if (!prayer.time) return false;
-        const diff = Math.abs(now.getTime() - prayer.time.getTime());
-        if (diff <= 60 * 1000 * 5) {
+        const diff = now.getTime() - prayer.time.getTime();
+        if (diff >= 0 && diff <= 60 * 1000 * 5) {
           // Within 5 minutes
           isActive = true;
           activePrayer = prayer.type;
