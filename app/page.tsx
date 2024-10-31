@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 import dynamic from 'next/dynamic';
 import { Card } from '@/components/ui/card';
-import { MoonIcon, SunIcon, SearchIcon } from 'lucide-react';
+import { MoonIcon, SunIcon, SearchIcon, Clock, Text } from 'lucide-react';
 import { useTheme } from 'next-themes';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -35,6 +35,7 @@ export default function Home() {
   const [focusedCity, setFocusedCity] = useState<City | null>(null);
   const [searchQuery, setSearchQuery] = useState('');
   const [activeTab, setActiveTab] = useState('active');
+  const [sortByTime, setSortByTime] = useState(false);
 
   useEffect(() => {
     setMounted(true);
@@ -50,18 +51,6 @@ export default function Home() {
       let isActive = false;
       let activePrayer: string | undefined;
       let nextPrayer: { type: string; time: Date } | undefined;
-
-      // prayerTimes.some((prayer) => {
-      //   if (!prayer.time) return false;
-      //   const diff = now.getTime() - prayer.time.getTime();
-      //   if (diff >= 0 && diff <= 60 * 1000 * 5) {
-      //     // Within 5 minutes
-      //     isActive = true;
-      //     activePrayer = prayer.type;
-      //     return true;
-      //   }
-      //   return false;
-      // });
 
       // Find current and next prayer times
       for (let i = 0; i < prayerTimes.length; i++) {
@@ -96,16 +85,31 @@ export default function Home() {
     setActiveCities(active);
   };
 
-  const filteredCities = activeCities.filter((city) => {
-    const matchesSearch =
-      city.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      city.country.toLowerCase().includes(searchQuery.toLowerCase());
-    const matchesTab =
-      activeTab === 'all' ||
-      (activeTab === 'active' && city.isActive) ||
-      (activeTab === 'inactive' && !city.isActive);
-    return matchesSearch && matchesTab;
-  });
+  const filteredAndSortedCities = (() => {
+    let filtered = activeCities.filter((city) => {
+      const matchesSearch =
+        city.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        city.country.toLowerCase().includes(searchQuery.toLowerCase());
+      const matchesTab =
+        activeTab === 'all' ||
+        (activeTab === 'active' && city.isActive) ||
+        (activeTab === 'inactive' && !city.isActive);
+      return matchesSearch && matchesTab;
+    });
+
+    if (sortByTime) {
+      filtered.sort((a, b) => {
+        // Cities with no next prayer time go to the end
+        if (!a.nextPrayer) return 1;
+        if (!b.nextPrayer) return -1;
+        return a.nextPrayer.time.getTime() - b.nextPrayer.time.getTime();
+      });
+    } else {
+      filtered.sort((a, b) => a.name.localeCompare(b.name));
+    }
+
+    return filtered;
+  })();
 
   const handleCityClick = (city: City) => {
     setFocusedCity(city);
@@ -159,8 +163,24 @@ export default function Home() {
                 />
               </div>
 
+              <div className="flex justify-between items-center">
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={() => setSortByTime(!sortByTime)}
+                  className="flex items-center gap-2"
+                >
+                  {sortByTime ? (
+                    <Text className="h-4 w-4" />
+                  ) : (
+                    <Clock className="h-4 w-4" />
+                  )}
+                  {sortByTime ? 'Sort by Name' : 'Sort by Time'}
+                </Button>
+              </div>
+
               <Tabs
-                defaultValue="all"
+                defaultValue="active"
                 value={activeTab}
                 onValueChange={setActiveTab}
               >
@@ -172,9 +192,9 @@ export default function Home() {
 
                 <TabsContent value="all" className="mt-4">
                   <div className="h-[450px] overflow-y-auto space-y-3">
-                    {filteredCities.map((city) => (
+                    {filteredAndSortedCities.map((city) => (
                       <CityCard
-                        key={city.name}
+                        key={city.name + city.country}
                         city={city}
                         onClick={handleCityClick}
                       />
@@ -184,11 +204,11 @@ export default function Home() {
 
                 <TabsContent value="active" className="mt-4">
                   <div className="h-[450px] overflow-y-auto space-y-3">
-                    {filteredCities
+                    {filteredAndSortedCities
                       .filter((city) => city.isActive)
                       .map((city) => (
                         <CityCard
-                          key={city.name}
+                          key={city.name + city.country}
                           city={city}
                           onClick={handleCityClick}
                         />
@@ -198,11 +218,11 @@ export default function Home() {
 
                 <TabsContent value="inactive" className="mt-4">
                   <div className="h-[450px] overflow-y-auto space-y-3">
-                    {filteredCities
+                    {filteredAndSortedCities
                       .filter((city) => !city.isActive)
                       .map((city) => (
                         <CityCard
-                          key={city.name}
+                          key={city.name + city.country}
                           city={city}
                           onClick={handleCityClick}
                         />
