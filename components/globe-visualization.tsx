@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
-import Globe from 'globe.gl';
+import Globe, { GlobeInstance } from 'globe.gl';
 import { useTheme } from 'next-themes';
 
 export type City = {
@@ -20,7 +20,7 @@ export default function GlobeVisualization({
   cities: City[];
   focusedCity: City | null;
 }) {
-  const globeRef = useRef<any>();
+  const globeRef = useRef<GlobeInstance>();
   const containerRef = useRef<HTMLDivElement>(null);
   const { theme } = useTheme();
 
@@ -37,6 +37,29 @@ export default function GlobeVisualization({
       );
     }
   }, [focusedCity]);
+
+  useEffect(() => {
+    if (globeRef.current) {
+      globeRef.current.pointsData(
+        cities.map((city) => {
+          let color = city.isActive
+            ? theme === 'dark'
+              ? '#4ade80'
+              : '#16a34a' // Brighter green in dark mode
+            : theme === 'dark'
+            ? '#374151'
+            : '#94a3b8'; // More subtle when inactive
+
+          return {
+            ...city,
+            alt: city.isActive ? 0.1 : 0.01,
+            rad: city.isActive ? 0.5 : 0.3,
+            color,
+          };
+        })
+      );
+    }
+  }, [cities]);
 
   useEffect(() => {
     const currentContainer = containerRef.current;
@@ -142,7 +165,7 @@ export default function GlobeVisualization({
         currentContainer.innerHTML = '';
       }
     };
-  }, [cities, theme]);
+  }, [theme]);
 
   return <div ref={containerRef} className="w-full h-full" />;
 }

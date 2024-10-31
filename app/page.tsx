@@ -39,7 +39,7 @@ export default function Home() {
   useEffect(() => {
     setMounted(true);
     updateActiveCities();
-    const interval = setInterval(updateActiveCities, 1000 * 60 * 1); // Update every 1 minute
+    const interval = setInterval(updateActiveCities, 1000 * 10); // Update every 10 seconds
     return () => clearInterval(interval);
   }, []);
 
