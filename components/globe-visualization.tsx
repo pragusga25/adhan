@@ -40,24 +40,41 @@ export default function GlobeVisualization({
 
   useEffect(() => {
     if (globeRef.current) {
-      globeRef.current.pointsData(
-        cities.map((city) => {
-          let color = city.isActive
-            ? theme === 'dark'
-              ? '#4ade80'
-              : '#16a34a' // Brighter green in dark mode
-            : theme === 'dark'
-            ? '#374151'
-            : '#94a3b8'; // More subtle when inactive
+      globeRef.current
+        .pointsData(
+          cities.map((city) => {
+            let color = city.isActive
+              ? theme === 'dark'
+                ? '#4ade80'
+                : '#16a34a' // Brighter green in dark mode
+              : theme === 'dark'
+              ? '#374151'
+              : '#94a3b8'; // More subtle when inactive
 
-          return {
-            ...city,
-            alt: city.isActive ? 0.1 : 0.01,
-            rad: city.isActive ? 0.5 : 0.3,
-            color,
-          };
+            return {
+              ...city,
+              alt: city.isActive ? 0.1 : 0.01,
+              rad: city.isActive ? 0.5 : 0.3,
+              color,
+            };
+          })
+        )
+        .htmlElementsData(cities.filter((city) => city.isActive))
+        .htmlElement((d) => {
+          const data = d as City;
+          const place = `${data.name}, ${data.country}`;
+          const el = document.createElement('div');
+          el.className = 'absolute pointer-events-none';
+          el.style.color = theme === 'dark' ? '#4ade80' : '#16a34a';
+          el.innerHTML = `
+          <div class="relative flex items-center justify-center">
+            <div class="absolute w-6 h-6 bg-current rounded-full opacity-20 animate-ping"></div>
+            <div class="relative z-10 p-2 text-xs font-bold">${place}</div>
+          </div>
+        `;
+          return el;
         })
-      );
+        .htmlAltitude(0.2);
     }
   }, [cities]);
 
