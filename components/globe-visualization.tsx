@@ -97,15 +97,16 @@ export default function GlobeVisualization({
       .atmosphereAltitude(0.25)
       // HTML element configuration for labels
       .htmlElementsData(cities.filter((city) => city.isActive))
-      .htmlElement(() => {
+      .htmlElement((d) => {
+        const data = d as City;
+        const place = `${data.name}, ${data.country}`;
         const el = document.createElement('div');
         el.className = 'absolute pointer-events-none';
         el.style.color = theme === 'dark' ? '#4ade80' : '#16a34a';
         el.innerHTML = `
           <div class="relative flex items-center justify-center">
             <div class="absolute w-6 h-6 bg-current rounded-full opacity-20 animate-ping"></div>
-            <div class="absolute w-5 h-5 bg-current rounded-full opacity-40"></div>
-            <div class="relative w-4 h-4 bg-current rounded-full"></div>
+            <div class="relative z-10 p-2 text-xs font-bold">${place}</div>
           </div>
         `;
         return el;
