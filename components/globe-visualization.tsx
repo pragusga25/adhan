@@ -40,6 +40,20 @@ export default function GlobeVisualization({
 
   useEffect(() => {
     if (globeRef.current) {
+      const ringsData = cities
+        .filter((city) => city.isActive)
+        .map((city) => ({
+          lat: city.lat,
+          lng: city.lng,
+          maxR: 3,
+          propagationSpeed: 2,
+          repeatPeriod: 1000,
+          color:
+            theme === 'dark'
+              ? 'rgba(34, 197, 94, 0.8)'
+              : 'rgba(21, 128, 61, 0.8)', // More opaque green
+        }));
+
       globeRef.current
         .pointsData(
           cities.map((city) => {
@@ -59,6 +73,12 @@ export default function GlobeVisualization({
             };
           })
         )
+        // Rings configuration
+        .ringsData(ringsData)
+        .ringColor('color')
+        .ringMaxRadius('maxR')
+        .ringPropagationSpeed('propagationSpeed')
+        .ringRepeatPeriod('repeatPeriod')
         .htmlElementsData(cities.filter((city) => city.isActive))
         .htmlElement((d) => {
           const data = d as City;

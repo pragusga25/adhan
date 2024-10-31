@@ -63,8 +63,9 @@ export const cities = [
     coordinates: [-6.7924, 39.2083],
   },
   { name: 'Zanzibar', country: 'Tanzania', coordinates: [-6.1659, 39.2026] },
+  // West Africa
   { name: 'Lagos', country: 'Nigeria', coordinates: [6.5244, 3.3792] },
-  { name: 'Kano', country: 'Nigeria', coordinates: [12.0022, 8.592] },
+  { name: 'Kano', country: 'Nigeria', coordinates: [12.0, 8.5167] },
   { name: 'Ibadan', country: 'Nigeria', coordinates: [7.3775, 3.947] },
   { name: 'Abuja', country: 'Nigeria', coordinates: [9.0765, 7.3986] },
   { name: 'Dakar', country: 'Senegal', coordinates: [14.7167, -17.4677] },
@@ -74,9 +75,11 @@ export const cities = [
     country: 'Burkina Faso',
     coordinates: [12.3714, -1.5197],
   },
-  { name: 'Accra', country: 'Ghana', coordinates: [5.6037, -0.187] },
-  { name: 'Kumasi', country: 'Ghana', coordinates: [6.6885, -1.6244] },
+  { name: 'Conakry', country: 'Guinea', coordinates: [9.6412, -13.5784] },
   { name: 'Abidjan', country: 'Ivory Coast', coordinates: [5.36, -4.0083] },
+  { name: 'Accra', country: 'Ghana', coordinates: [5.6037, -0.187] },
+  { name: 'Lomé', country: 'Togo', coordinates: [6.1319, 1.2228] },
+  { name: 'Niamey', country: 'Niger', coordinates: [13.5127, 2.1128] },
   {
     name: 'Johannesburg',
     country: 'South Africa',
@@ -95,7 +98,17 @@ export const cities = [
   },
   { name: 'Maputo', country: 'Mozambique', coordinates: [-25.9692, 32.5732] },
   { name: 'Luanda', country: 'Angola', coordinates: [-8.8147, 13.2302] },
+  // Central Africa
+  { name: "N'Djamena", country: 'Chad', coordinates: [12.1348, 15.0557] },
+  { name: 'Yaoundé', country: 'Cameroon', coordinates: [3.848, 11.5021] },
+  { name: 'Douala', country: 'Cameroon', coordinates: [4.0511, 9.7679] },
+  {
+    name: 'Bangui',
+    country: 'Central African Republic',
+    coordinates: [4.3947, 18.5582],
+  },
   { name: 'Kinshasa', country: 'DR Congo', coordinates: [-4.4419, 15.2663] },
+  { name: 'Libreville', country: 'Gabon', coordinates: [0.4162, 9.4673] },
   { name: 'Lubumbashi', country: 'DR Congo', coordinates: [-11.6876, 27.5026] },
   { name: 'Lusaka', country: 'Zambia', coordinates: [-15.3875, 28.3228] },
   { name: 'Harare', country: 'Zimbabwe', coordinates: [-17.8252, 31.0335] },
@@ -277,6 +290,46 @@ export const cities = [
     coordinates: [-4.5469, 136.8867],
   },
 
+  // Thailand (Extended)
+  { name: 'Bangkok', country: 'Thailand', coordinates: [13.7563, 100.5018] },
+  { name: 'Chiang Mai', country: 'Thailand', coordinates: [18.7883, 98.9853] },
+  { name: 'Phuket', country: 'Thailand', coordinates: [7.8804, 98.3923] },
+  { name: 'Hat Yai', country: 'Thailand', coordinates: [7.0086, 100.4747] },
+  { name: 'Udon Thani', country: 'Thailand', coordinates: [17.4139, 102.7867] },
+  {
+    name: 'Nakhon Ratchasima',
+    country: 'Thailand',
+    coordinates: [14.9798, 102.0978],
+  },
+  { name: 'Khon Kaen', country: 'Thailand', coordinates: [16.4322, 102.8236] },
+
+  // Myanmar (Burma)
+  { name: 'Yangon', country: 'Myanmar', coordinates: [16.8661, 96.1951] },
+  { name: 'Mandalay', country: 'Myanmar', coordinates: [21.9588, 96.0891] },
+  { name: 'Naypyidaw', country: 'Myanmar', coordinates: [19.7633, 96.0785] },
+  { name: 'Mawlamyine', country: 'Myanmar', coordinates: [16.491, 97.628] },
+
+  // Laos
+  { name: 'Vientiane', country: 'Laos', coordinates: [17.9757, 102.6331] },
+  { name: 'Pakse', country: 'Laos', coordinates: [15.1202, 105.8187] },
+  { name: 'Luang Prabang', country: 'Laos', coordinates: [19.8867, 102.135] },
+
+  // Cambodia
+  { name: 'Phnom Penh', country: 'Cambodia', coordinates: [11.5564, 104.9282] },
+  { name: 'Siem Reap', country: 'Cambodia', coordinates: [13.3633, 103.8564] },
+  { name: 'Battambang', country: 'Cambodia', coordinates: [13.1023, 103.196] },
+
+  // Vietnam
+  { name: 'Hanoi', country: 'Vietnam', coordinates: [21.0285, 105.8542] },
+  {
+    name: 'Ho Chi Minh City',
+    country: 'Vietnam',
+    coordinates: [10.8231, 106.6297],
+  },
+  { name: 'Da Nang', country: 'Vietnam', coordinates: [16.0544, 108.2022] },
+  { name: 'Can Tho', country: 'Vietnam', coordinates: [10.0452, 105.7469] },
+  { name: 'Hue', country: 'Vietnam', coordinates: [16.4637, 107.5909] },
+
   { name: 'Kuala Lumpur', country: 'Malaysia', coordinates: [3.139, 101.6869] },
   { name: 'Penang', country: 'Malaysia', coordinates: [5.4141, 100.3288] },
   { name: 'Johor Bahru', country: 'Malaysia', coordinates: [1.4927, 103.7414] },
@@ -286,26 +339,13 @@ export const cities = [
     coordinates: [5.9804, 116.0735],
   },
   { name: 'Kuching', country: 'Malaysia', coordinates: [1.5497, 110.3409] },
+
   { name: 'Singapore', country: 'Singapore', coordinates: [1.3521, 103.8198] },
-  { name: 'Bangkok', country: 'Thailand', coordinates: [13.7563, 100.5018] },
-  { name: 'Pattaya', country: 'Thailand', coordinates: [12.9236, 100.8824] },
-  { name: 'Chiang Mai', country: 'Thailand', coordinates: [18.7883, 98.9853] },
+
   { name: 'Manila', country: 'Philippines', coordinates: [14.5995, 120.9842] },
   { name: 'Cebu', country: 'Philippines', coordinates: [10.3157, 123.8854] },
   { name: 'Davao', country: 'Philippines', coordinates: [7.1907, 125.4553] },
-  {
-    name: 'Ho Chi Minh City',
-    country: 'Vietnam',
-    coordinates: [10.8231, 106.6297],
-  },
-  { name: 'Hanoi', country: 'Vietnam', coordinates: [21.0285, 105.8542] },
-  { name: 'Da Nang', country: 'Vietnam', coordinates: [16.0544, 108.2022] },
-  { name: 'Phnom Penh', country: 'Cambodia', coordinates: [11.5564, 104.9282] },
-  { name: 'Siem Reap', country: 'Cambodia', coordinates: [13.3633, 103.8564] },
-  { name: 'Vientiane', country: 'Laos', coordinates: [17.9757, 102.6331] },
-  { name: 'Yangon', country: 'Myanmar', coordinates: [16.8661, 96.1951] },
-  { name: 'Mandalay', country: 'Myanmar', coordinates: [21.9588, 96.0891] },
-  { name: 'Naypyidaw', country: 'Myanmar', coordinates: [19.7633, 96.0785] },
+
   {
     name: 'Bandar Seri Begawan',
     country: 'Brunei',
@@ -341,10 +381,20 @@ export const cities = [
   { name: 'Shenzhen', country: 'China', coordinates: [22.5431, 114.0579] },
   { name: 'Hong Kong', country: 'China', coordinates: [22.3193, 114.1694] },
   { name: 'Macau', country: 'China', coordinates: [22.1987, 113.5439] },
-  { name: 'Chengdu', country: 'China', coordinates: [30.5728, 104.0668] },
   { name: 'Wuhan', country: 'China', coordinates: [30.5928, 114.3055] },
+
+  // Western China
+  { name: 'Ürümqi', country: 'China', coordinates: [43.8256, 87.6168] },
+  { name: 'Lhasa', country: 'China', coordinates: [29.65, 91.1] },
+  { name: 'Kashgar', country: 'China', coordinates: [39.47, 75.99] },
+  { name: 'Hotan', country: 'China', coordinates: [37.1128, 79.9342] },
+  { name: 'Xining', country: 'China', coordinates: [36.6167, 101.7667] },
+  { name: 'Lanzhou', country: 'China', coordinates: [36.0564, 103.7922] },
+  { name: 'Yinchuan', country: 'China', coordinates: [38.4681, 106.2731] },
   { name: "Xi'an", country: 'China', coordinates: [34.3416, 108.9398] },
-  { name: 'Urumqi', country: 'China', coordinates: [43.8256, 87.6168] },
+  { name: 'Chengdu', country: 'China', coordinates: [30.5728, 104.0668] },
+  { name: 'Kunming', country: 'China', coordinates: [25.0389, 102.7183] },
+
   { name: 'Tokyo', country: 'Japan', coordinates: [35.6762, 139.6503] },
   { name: 'Osaka', country: 'Japan', coordinates: [34.6937, 135.5023] },
   { name: 'Nagoya', country: 'Japan', coordinates: [35.1815, 136.9066] },
