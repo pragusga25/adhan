@@ -11,6 +11,7 @@ export type City = {
   lng: number;
   isActive: boolean;
   activePrayer?: string;
+  nextPrayer?: { type: string; time: Date };
 };
 
 export default function GlobeVisualization({

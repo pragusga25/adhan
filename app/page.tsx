@@ -49,23 +49,48 @@ export default function Home() {
       const prayerTimes = calculatePrayerTimes(city.lat, city.lng, now);
       let isActive = false;
       let activePrayer: string | undefined;
+      let nextPrayer: { type: string; time: Date } | undefined;
 
-      prayerTimes.some((prayer) => {
-        if (!prayer.time) return false;
-        const diff = now.getTime() - prayer.time.getTime();
-        if (diff >= 0 && diff <= 60 * 1000 * 5) {
-          // Within 5 minutes
+      // prayerTimes.some((prayer) => {
+      //   if (!prayer.time) return false;
+      //   const diff = now.getTime() - prayer.time.getTime();
+      //   if (diff >= 0 && diff <= 60 * 1000 * 5) {
+      //     // Within 5 minutes
+      //     isActive = true;
+      //     activePrayer = prayer.type;
+      //     return true;
+      //   }
+      //   return false;
+      // });
+
+      // Find current and next prayer times
+      for (let i = 0; i < prayerTimes.length; i++) {
+        const prayer = prayerTimes[i];
+        if (!prayer.time) continue;
+
+        const timeDiff = now.getTime() - prayer.time.getTime();
+
+        // Check if within 15 minutes before or after prayer time
+        if (timeDiff >= 0 && timeDiff <= 60 * 1000 * 5) {
           isActive = true;
           activePrayer = prayer.type;
-          return true;
         }
-        return false;
-      });
+
+        // Find next prayer
+        if (timeDiff < 0) {
+          nextPrayer = {
+            type: prayer.type,
+            time: prayer.time,
+          };
+          break;
+        }
+      }
 
       return {
         ...city,
         isActive,
         activePrayer,
+        nextPrayer,
       };
     });
     setActiveCities(active);
@@ -215,10 +240,21 @@ function CityCard({
       <div>
         <p className="font-medium">{city.name}</p>
         <p className="text-sm text-muted-foreground mb-1">{city.country}</p>
-        {city.isActive && (
+        {city.isActive ? (
           <p className="text-sm font-medium text-green-600 dark:text-green-500">
             {city.activePrayer} Prayer
           </p>
+        ) : (
+          city.nextPrayer && (
+            <p className="text-sm text-muted-foreground">
+              Next: {city.nextPrayer.type} (
+              {new Date(city.nextPrayer.time).toLocaleTimeString('en-US', {
+                hour: 'numeric',
+                minute: '2-digit',
+              })}
+              )
+            </p>
+          )
         )}
       </div>
       {city.isActive && (
